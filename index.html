@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #E3F2FD;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            color: #fff;
+        }
+        .container {
+            width: 220px;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #90CAF9;
+            border-radius: 5px;
+        }
+        p {
+            width: 35px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #42A5F5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <input type="range" min="0" max="100" value="0">
+    <p class="meter">0</p>
+    </div>
+
+    <script>
+        var slider = document.querySelector("input");
+        var meter = document.querySelector(".meter");
+            meter.textContent = slider.value;
+            slider.oninput = function() {
+                meter.textContent = this.value;
+            }
+    </script>
+</body>
+</html>
